@@ -1,0 +1,51 @@
+apply plugin: 'com.android.library'
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'ChessBoardLayout'
+
+    publishedGroupId = 'com.jungkai.chessboardlayout'
+    libraryName = 'ChessBoardLayout'
+    artifact = 'chessboardlayout'
+
+    libraryDescription = 'Android GridView Like Layout which support wrap_content height and Adapter'
+
+    siteUrl = 'https://github.com/KaiWooram/ChessBoardLayout'
+    gitUrl = 'https://github.com/KaiWooram/ChessBoardLayout.git'
+
+    libraryVersion = '1.0.0'
+
+    developerId = 'iam1492'
+    developerName = 'Wooram Jung'
+    developerEmail = 'mylove.sunyoung@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion '23.0.2'
+
+    defaultConfig {
+        minSdkVersion 8
+        targetSdkVersion 23
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+}
+
+apply from: 'https://raw.githubusercontent.com/KaiWooram/jcenter/master/installv.gradle'
+apply from: 'https://raw.githubusercontent.com/KaiWooram/jcenter/master/bintrayv.gradle'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:23.1.1'
+}
