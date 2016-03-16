@@ -16,7 +16,7 @@ ChessBoardLayout is simple gridview like layout. Easy to use and lightweight. Cu
 
 ## Usage
 
-- Fastest way is see the [sample project](https://github.com/KaiWooram/ChessBoardLayout/tree/master/sample).
+- Fastest way is see the [sample project](https://github.com/n42corp/chessboardlayout/tree/master/sample).
 
 #### define ChessBoardLayout in your android layout(xml)
 ```
