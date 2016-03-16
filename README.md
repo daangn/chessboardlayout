@@ -1,7 +1,7 @@
 ChessBoardLayout
 ================
 
-![ChessBoardLayout](https://raw.githubusercontent.com/KaiWooram/ChessBoardLayout/master/chessboardlayout.png)
+![ChessBoardLayout](https://raw.githubusercontent.com/n42corp/chessboardlayout/master/chessboardlayout.png)
 
 ChessBoardLayout is Android GridView Like Layout which support wrap_content height and Adapter
 
