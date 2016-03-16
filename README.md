@@ -9,10 +9,11 @@ Android platform gridview is not suitable for fixed height grid layout. To make 
 
 ChessBoardLayout is simple gridview like layout. Easy to use and lightweight. Currently not very stable but will be maintained. 
 
-## Install Guide
+## Install Guide (add dependency)
 
-1. You can just clone the project and use it as android library module.
-2. Maven repository will be soon supported.
+```
+compile 'com.jungkai.chessboardlayout:library:1.0.0'
+```
 
 ## Usage
 
