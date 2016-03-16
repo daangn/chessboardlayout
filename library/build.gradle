@@ -1,27 +1,36 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
 
-ext {
-    bintrayRepo = 'maven'
-    bintrayName = 'ChessBoardLayout'
+group = 'com.jungkai.chessboardlayout'
+version = '1.0.0'
 
-    publishedGroupId = 'com.jungkai.chessboardlayout'
-    libraryName = 'ChessBoardLayout'
-    artifact = 'chessboardlayout'
 
-    libraryDescription = 'Android GridView Like Layout which support wrap_content height and Adapter'
+task generateSourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier 'sources'
+}
 
-    siteUrl = 'https://github.com/KaiWooram/ChessBoardLayout'
-    gitUrl = 'https://github.com/KaiWooram/ChessBoardLayout.git'
+artifacts {
+    archives generateSourcesJar
+}
 
-    libraryVersion = '1.0.0'
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
-    developerId = 'iam1492'
-    developerName = 'Wooram Jung'
-    developerEmail = 'mylove.sunyoung@gmail.com'
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
 
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
+    pkg {
+        repo = "maven"
+        name = "chessboardlayout"
+        websiteUrl = 'https://github.com/KaiWooram/ChessBoardLayout'
+        vcsUrl = 'https://github.com/KaiWooram/ChessBoardLayout.git'
+        licenses = ["Apache-2.0"]
+        publish = true
+    }
+    configurations = ['archives']
 }
 
 android {
@@ -38,9 +47,6 @@ android {
     }
 
 }
-
-apply from: 'https://raw.githubusercontent.com/KaiWooram/jcenter/master/installv.gradle'
-apply from: 'https://raw.githubusercontent.com/KaiWooram/jcenter/master/bintrayv.gradle'
 
 repositories {
     mavenCentral()
